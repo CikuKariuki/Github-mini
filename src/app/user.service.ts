@@ -13,6 +13,12 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     console.log("service is running")
-    this.username='CikuKariuki'
+    this.username='CikuKariuki';
    }
+   getProfileInfo(){
+    return this.http.get("https://api.github.com/users/" + this.username )
+    // + "?client_id=" + this.clientid + "client_secret="+ this.clientsecret)
+
 }
+}
+
