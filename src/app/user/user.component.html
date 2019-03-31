@@ -1,5 +1,12 @@
 <div *ngIf="user">
   <div class="card">
+    <h1>
     {{user.name}} ({{user.login}})
+   </h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+        <img src="{{profile.avatar_url}}" alt="">
+      </div>
   </div>
 </div>
