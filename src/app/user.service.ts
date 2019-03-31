@@ -7,6 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  private username:string;
+  private clientid="";
+  private clientsecret="";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    console.log("service is running")
+    this.username='CikuKariuki'
+   }
 }
