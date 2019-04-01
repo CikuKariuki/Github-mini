@@ -14,9 +14,13 @@ export class UserService {
     console.log("service is running")
     this.username='CikuKariuki';
    }
-   getUserInfo(){
+ getUserInfo(){
    return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid +"&client_secret=" + this.clientsecret)
     map((res: Response) => res.json())
+}
+getUserRepos(){
+  return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid +"&client_secret=" + this.clientsecret)
+  map((res: Response) => res.json())
 }
 updateUser(username:string){
   this.username= username;

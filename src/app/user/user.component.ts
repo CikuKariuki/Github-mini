@@ -19,9 +19,13 @@ export class UserComponent implements OnInit {
 findProfile(){
   this.userService.updateUser(this.username);
   this.userService.getUserInfo().subscribe(user =>{
-  console.log(user),
-        this.user=user;
+    console.log(user);
+    this.user=user;
       });
+  this.userService.getUserRepos().subscribe(repos => {
+    console.log(repos);
+    this.repos=repos;
+  })
      
     }
     ngOnInit() {
