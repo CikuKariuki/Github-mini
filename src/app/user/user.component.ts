@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { HttpClient } from '@angular/common/http';
 import { Repos } from '../repos';
 
 
@@ -12,16 +11,16 @@ import { Repos } from '../repos';
 export class UserComponent implements OnInit {
  user:any;
  repos:any[];
-  constructor(private http:HttpClient, private userService: UserService) {
-    this.userService.getProfileInfo().subscribe(user => {
-      this.user = user
+  constructor(private userService: UserService) {
+    this.userService.getUserInfo().subscribe(user => {
+      console.log(user);
     });
    }
 
   ngOnInit() {
-    this.http.get("https://api.github.com/users/CikuKariuki/repos").subscribe(data=>{
+    // this.http.get("https://api.github.com/users/CikuKariuki/repos").subscribe(user=>{
       
-    })
+    // })
   }
 
 }
