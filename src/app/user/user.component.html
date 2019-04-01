@@ -1,1 +1,26 @@
-<p>user works!</p>
+<form id="searchForm">
+    <input type="text" class="form-control" placeholder="search user">
+</form>
+<div *ngIf='user'>
+  <div class="card">
+      <h1>{{user.name}} <small>({{user.login}})</small></h1>
+      <span *ngIf='user.company'>, Works at</span>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <img src="{{user.avatar_url}}" alt="">
+          </div>
+          <div class="col-md-6">
+              <ul class="list-group">
+                  <li class="list-group" *ngIf='user.bio'>{{user.bio}}</li>
+                  <li class="list-group" *ngIf='user.public_repos'>Repositories: {{user.public_repos}}</li>
+                  <li class="list-group" *ngIf='user.email'><a href="{{user.email}}" target="_blank">{{user.email}}</a></li>
+                  <li class="list-group" >Followers: {{user.followers}}</li>
+                  <li class="list-group" >Following: {{user.following}}</li>
+              </ul>
+              <button class="primary"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button>
+          </div>
+      </div>
+  </div>
+<div>
