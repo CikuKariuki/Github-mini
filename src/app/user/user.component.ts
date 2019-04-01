@@ -15,7 +15,9 @@ export class UserComponent implements OnInit {
  repos:any;
  username:string;
   constructor(private userService: UserService) {}
-
+  toggleDetails(index){
+    this.repos[index].showDescription = !this.repos[index].showDescription;
+  }
 findProfile(){
   this.userService.updateUser(this.username);
   this.userService.getUserInfo().subscribe(user =>{

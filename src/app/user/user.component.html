@@ -1,18 +1,34 @@
-
+<!-- <nav>
+    <ul>
+        <li>
+            <a routerLink="">
+                <img src="assets/icons8-female-profile-48.png">
+            </a>
+        </li>
+        <li>
+            <a href="{{repo.html_url}}">
+                <img src="assets/icons8-folder-48.png">
+            </a>
+        </li>
+    </ul>
+</nav> -->
+<h1 id="intro">Welcome to Git Mini</h1>
+<img id="logo" src="assets/icons8-github-96.png">
 <form id="searchForm" #userForm='ngForm'>
-        <input type="text" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
+        <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
 </form>
 <div *ngIf='user'>
-  <div class="card">
+  <div id="login"class="card">
       <h1>{{user.name}} <small>({{user.login}})</small></h1>
       <span *ngIf='user.company'>Works at {{user.company}}</span>
   </div>
-  <div class="container">
+  <!-- <div class="container"> -->
       <div class="row">
           <div class="col-md-6">
-              <img src="{{user.avatar_url}}" alt="">
+              <img src="{{user.avatar_url}}" id="rounded" alt="">
           </div>
           <div class="col-md-6">
+              <div class="card" id="list" >
               <ul class="list-group">
                   <li class="list-group" *ngIf='user.bio'>{{user.bio}}</li>
                   <li class="list-group" *ngIf='user.public_repos'>Repositories: {{user.public_repos}}</li>
@@ -20,13 +36,19 @@
                   <li class="list-group" >Followers: {{user.followers}}</li>
                   <li class="list-group" >Following: {{user.following}}</li>
               </ul>
-              <button class="primary"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button>
-          </div>
-          <h1>Repositories</h1> <br>
-          <div class="card" *ngFor='let repo of repos'>
-            <p>{{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="primary" class="pull right">View on github</a></p>
-            <p>{{repo.description}}</p>
-          </div>
-      </div>
-  </div>
+              <button id="vgithub"class="primary"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button><br>
+            </div>
+            <div class="card" id="repository">
+          <button>Repositories</button> <br>
+          <div *ngFor='let repo of repos'>
+                <ul>
+                  <li><b>Name:</b> {{repo.name}} </li>
+                  <li><b>Description:</b> {{repo.description}}</li>
+                  <button id="vrepo"><a href="{{repo.html_url}}" target="_blank">View on github</a></button>
+                </ul>
+              </div>
+             </div>
+            </div>
+        </div>
+     <!-- </div> -->
 <div>
