@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Repos } from '../repos';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers:[ UserService]
 })
 export class UserComponent implements OnInit {
  user:any;
- repos:any[];
-  constructor(private userService: UserService) {
-    this.userService.getUserInfo().subscribe(user => {
-      console.log(user);
-      this.user=user
-    });
-   }
+ repos:any;
+ username:string;
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {
-    // this.http.get("https://api.github.com/users/CikuKariuki/repos").subscribe(user=>{
-      
-    // })
+findProfile(){
+  this.userService.updateUser(this.username);
+  this.userService.getUserInfo().subscribe(user =>{
+  console.log(user),
+        this.user=user;
+      });
+     
+    }
+    ngOnInit() {
+
   }
 
 }

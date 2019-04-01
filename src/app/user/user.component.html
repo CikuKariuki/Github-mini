@@ -1,10 +1,10 @@
-<form id="searchForm">
-    <input type="text" class="form-control" placeholder="search user">
+<form id="searchForm" #userForm='ngForm'>
+        <input type="text" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
 </form>
 <div *ngIf='user'>
   <div class="card">
       <h1>{{user.name}} <small>({{user.login}})</small></h1>
-      <span *ngIf='user.company'>, Works at</span>
+      <span *ngIf='user.company'>Works at {{user.company}}</span>
   </div>
   <div class="container">
       <div class="row">
