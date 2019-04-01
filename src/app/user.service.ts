@@ -16,7 +16,7 @@ export class UserService {
     this.username='CikuKariuki';
    }
    getProfileInfo(){
-    return this.http.get("https://api.github.com/users/" + this.username)
+    return this.http.get("https://api.github.com/users/CikuKariuki?access_token=0574ede6befc69cc9e860ab98c6c884a0460bfe7" + this.username)
 
 }
 }
