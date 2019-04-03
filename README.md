@@ -1,6 +1,23 @@
-# GitMini
+# GithubMini
 
+## Description
+It is a website where users may enter a user's GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also run a specified search for repositories.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+
+## Requirements
+
+To view: It has been tested on Chrome, Chromium and Mozilla Firefox.
+
+## Technologies Used
+
+HTML, CSS, AngularJS
+
+## BDD
+
+| BEHAVIOUR    | INPUT   |  OUTPUT |
+| :------------- | :------------- | :--------------- |
+| Search username    | Github username  | Github name and description of public repositories |
+| Display repositories| Repository name  | Github repositories of the user.|
 
 ## Development server
 
