@@ -8,14 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ReposComponent } from './repos/repos.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ReposComponent,
-    SidebarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Repos } from '../repos';
 import {HttpClientModule} from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +11,10 @@ import {HttpClientModule} from '@angular/common/http';
   providers:[ UserService]
 })
 export class UserComponent implements OnInit {
- user:any;
+ 
+ user$:Object;
+ 
+  user:any;
  repos:any;
  username:string;
   constructor(private userService: UserService) {}
@@ -31,6 +34,9 @@ findProfile(){
      
     }
     ngOnInit() {
+     this.user.getUser().subscribe(
+       user => this.user$ = user 
+     );
 
   }
 

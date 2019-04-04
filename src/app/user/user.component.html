@@ -1,16 +1,30 @@
-<app-sidebar></app-sidebar>
-<!-- <h1 id="intro">Welcome to Git Mini</h1>
+<!-- <nav>
+    <ul>
+        <li>
+            <a routerLink="">
+                <img src="assets/icons8-female-profile-48.png">
+            </a>
+        </li>
+        <li>
+            <a href="{{repo.html_url}}">
+                <img src="assets/icons8-folder-48.png">
+            </a>
+        </li>
+    </ul>
+</nav> -->
+<h1 id="intro">Welcome to Git Mini</h1>
 <img id="logo" src="assets/icons8-github-96.png">
 <p id="statement">Search a github user by their Github name and find out more about them and their work.</p>
 <form id="searchForm" #userForm='ngForm'>
         <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
 </form>
+<h1>{{user.id</h1>
 <div *ngIf='user'>
   <div id="login"class="card">
       <h1>{{user.name}} <small>({{user.login}})</small></h1>
       <span *ngIf='user.company'>Works at {{user.company}}</span>
-  </div> -->
-  <!-- <div class="container">
+  </div>
+  <!-- <div class="container"> -->
       <div class="row">
           <div class="col-md-6">
               <img src="{{user.avatar_url}}" id="rounded" alt="">
@@ -27,17 +41,16 @@
               <button id="vgithub"class="primary"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button><br>
             </div>
             <div class="card" id="repository">
-                <a name="repositories"></a>
-                <button>Repositories</button> <br>
-                <div *ngFor='let repo of repos'>
-                      <ul>
-                        <li><b>Name:</b> {{repo.name}} </li>
-                        <li><b>Description:</b> {{repo.description}}</li>
-                        <button id="vrepo"><a href="{{repo.html_url}}" target="_blank">View on github</a></button>
-                      </ul>
-                    </div>
-                </div>
+          <button>Repositories</button> <br>
+          <div *ngFor='let repo of repos'>
+                <ul>
+                  <li><b>Name:</b> {{repo.name}} </li>
+                  <li><b>Description:</b> {{repo.description}}</li>
+                  <button id="vrepo"><a href="{{repo.html_url}}" target="_blank">View on github</a></button>
+                </ul>
+              </div>
+             </div>
             </div>
         </div>
-     </div> -->
-<!-- <div> -->
+     <!-- </div> -->
+<div>
