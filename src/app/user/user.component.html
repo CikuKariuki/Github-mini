@@ -18,11 +18,12 @@
 <form id="searchForm" #userForm='ngForm'>
         <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
 </form>
-<h1>{{user.id</h1>
+<h1></h1>
 <div *ngIf='user'>
   <div id="login"class="card">
       <h1>{{user.name}} <small>({{user.login}})</small></h1>
       <span *ngIf='user.company'>Works at {{user.company}}</span>
+      <span>Created {{user.created_at|dateCount}} day(s) ago.</span>
   </div>
   <!-- <div class="container"> -->
       <div class="row">
