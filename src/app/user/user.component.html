@@ -16,7 +16,8 @@
 <img id="logo" src="assets/icons8-github-96.png">
 <p id="statement">Search a github user by their Github name and find out more about them and their work.</p>
 <form id="searchForm" #userForm='ngForm'>
-        <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" (keyup)="findProfile()">
+        <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" >
+        <button (keyup)="findProfile()">Search</button>
 </form>
 <h1></h1>
 <div *ngIf='user'>
@@ -27,10 +28,10 @@
   </div>
   <!-- <div class="container"> -->
       <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
               <img src="{{user.avatar_url}}" id="rounded" alt="">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
               <div class="card" id="list" >
               <ul class="list-group">
                   <li class="list-group" *ngIf='user.bio'>{{user.bio}}</li>
@@ -39,8 +40,10 @@
                   <li class="list-group" >Followers: {{user.followers}}</li>
                   <li class="list-group" >Following: {{user.following}}</li>
               </ul>
-              <button id="vgithub"class="primary"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button><br>
+              <button id="vgithub"class="clear-fix"><a href="{{user.html_url}}" target="_blank">View Profile on Github</a></button><br>
             </div>
+            </div>
+            <div class="col-md-4">
             <div class="card" id="repository">
           <button>Repositories</button> <br>
           <div *ngFor='let repo of repos'>
