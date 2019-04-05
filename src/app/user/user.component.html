@@ -17,7 +17,7 @@
 <p id="statement">Search a github user by their Github name and find out more about them and their work.</p>
 <form id="searchForm" #userForm='ngForm'>
         <input type="text" id="searchBar" class="form-control" placeholder="search user"  [(ngModel)]="username" name="username" >
-        <button id="searchbutton" (keyup)="findProfile()"><img src="/assets/icons8-search-32.png"> </button>
+        <button id="searchbutton" (keyup)="findProfile()"><img src="assets/icons8-search-32.png"> </button>
 </form>
 <h1></h1>
 <div *ngIf='user'>
