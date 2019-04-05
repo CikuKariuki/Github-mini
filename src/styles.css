@@ -48,7 +48,14 @@ margin: 10px;
     background-color:#06fcd3;
     border-radius: 10%;
     width:200px;
-    
+}
+#searchbutton{
+    border-radius: 35%;
+    font-size: 22px;
+    text-align: center;
+}
+#searchbutton:hover{
+    background-color: #06fcd3;
 }
 #statement{
     color:white;
